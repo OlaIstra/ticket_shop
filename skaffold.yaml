@@ -1,18 +1,15 @@
-apiVersion: skaffold/v2alpha3
+apiVersion: skaffold/v2beta18
 kind: Config
+metadata:
+  name: ticketshop
+build:
+  artifacts:
+  - image: ticketshop/auth
+    context: auth
+    docker:
+      dockerfile: Dockerfile
 deploy:
   kubectl:
-    manifest:
-      - ./infra/k8s/*
-build:
-  local:
-    push: false
-  artifacts:
-    - image: NUMBER_OF_CONTAINER
-      context: auth
-      docker:
-        dockerfile: Dockerfile
-      sync:
-        manual:
-          - src: 'src/**/*.ts'
-            dest: .          
+    manifests:
+    - infra/k8s/auth-depl.yaml
+    - infra/k8s/ingress-srv.yaml

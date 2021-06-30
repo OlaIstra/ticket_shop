@@ -14,7 +14,7 @@ spec:
     spec: 
       containers:
         - name: auth
-          image: NUMBER_OF_CONTAINER
+          image: ticketshop/auth:latest
 ---
 apiVersion: v1
 kind: Service
