@@ -3,8 +3,10 @@ kind: Config
 metadata:
   name: ticketshop
 build:
+  googleCloudBuild:
+    projectId: my-deals-236608
   artifacts:
-  - image: ticketshop/auth
+  - image: us.gcr.io/my-deals-236608/auth
     context: auth
     docker:
       dockerfile: Dockerfile
