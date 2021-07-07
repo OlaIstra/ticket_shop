@@ -14,7 +14,7 @@ spec:
     spec: 
       containers:
         - name: auth
-          image: ticketshop/auth:latest
+          image: us.gcr.io/my-deals-236608/auth
 ---
 apiVersion: v1
 kind: Service
