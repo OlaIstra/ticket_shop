@@ -2,7 +2,7 @@ import express from 'express';
 
 const router = express.Router();
 
-router.post('/api/users/signOut', (_, res: express.Response) => {
+router.post('/api/users/signOut', async (_, res: express.Response) => {
     res.send('signOut');
 });
 
