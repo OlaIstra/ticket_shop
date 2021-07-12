@@ -6,12 +6,13 @@ build:
   googleCloudBuild:
     projectId: my-deals-236608
   artifacts:
-  - image: us.gcr.io/my-deals-236608/auth
-    context: auth
-    docker:
-      dockerfile: Dockerfile
+    - image: us.gcr.io/my-deals-236608/auth
+      context: auth
+      docker:
+        dockerfile: Dockerfile
 deploy:
   kubectl:
     manifests:
-    - infra/k8s/auth-depl.yaml
-    - infra/k8s/ingress-srv.yaml
+      - infra/k8s/auth-depl.yaml
+      - infra/k8s/ingress-srv.yaml
+      - infra/k8s/auth-mongo-depl.yaml
